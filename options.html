@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuration</title>
+  <style>
+    /* General body styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #4CAF50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Form container */
+    .form-container {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    form label {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #555;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+
+    form input:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    /* Buttons styling */
+    button {
+      display: inline-block;
+      padding: 10px 15px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #45A049;
+    }
+
+    /* Secondary button styling */
+    #testConnection {
+      background-color: #2196F3;
+      margin-top: 10px;
+    }
+
+    #testConnection:hover {
+      background-color: #1E88E5;
+    }
+
+    /* Connection status */
+    #connectionStatus {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>qBittorrent Server Configuration</h2>
+  <div class="form-container">
+    <form id="settingsForm">
+      <label for="server">Server</label>
+      <input type="text" id="server" placeholder="http://192.168.0.4" required />
+      
+      <label for="port">Port</label>
+      <input type="number" id="port" placeholder="8080" required />
+      
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="admin" required />
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+      
+      <button type="submit">Save Configuration</button>
+    </form>
+
+    <button id="testConnection">Test Connection</button>
+    <div id="connectionStatus"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
